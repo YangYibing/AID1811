@@ -51,6 +51,27 @@
     3.选择应用某个工作区
         git stash apply  stash@{0}
         * 执行该命令时，工作区必须为'干净'状态
+    4.删除保存的工作区
+        git stash drop stash@{0}  删除某一个
+        git stash pop   恢复最新保存的工作区并将其删除
+        git stash clear　删除所有工作区
+分支操作
+    什么是分支：即每个人获取原有代码，再此基础上创建自己的工作环境
+    单独开发，不会影响其他分支工作.开发完成后在统一合并
+
+    1.查看当前工作分支
+        git branch  列出所有项目分支，*　表示当前工作分支
+
+    2.分支创建和切换
+        git branch　[branch_name]
+        
+        切换分支：
+        git checkout [branch_name]
+        * 创建新的分支时最好确保当前分支是'干净的'
+
+        创建并切换分支：
+        git checkout -b [branch_name]
+        *创建新的分支并切换
 
 
 
