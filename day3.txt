@@ -133,6 +133,10 @@
     5.clone 远程仓库项目
         git clone tarena@127.0.0.1:/home/tarena/gitrepo/spyder.git
 
+    6.从远程仓库获取代码到本地
+        git pull 
+        * 自动从远程分支拉去代码合并到本地的对应分支
+        git fetch
 
 
 
