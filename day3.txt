@@ -119,13 +119,20 @@
     4.push将本地分支推送到远程
         将本地的master分支推送到远程
         git push -u origin master
-        
+
         * -u表示本地master和远程master建立追踪关系
         这样后面本地分支修改后再向远程推送则可以省略分支名
 
         向远程推送标签
         git push origin v1.0  某一个标签
         git push origin --tags  所有标签
+
+        删除远程分支
+        git push origin --delete Tom_dev
+
+    5.clone 远程仓库项目
+        git clone tarena@127.0.0.1:/home/tarena/gitrepo/spyder.git
+
 
 
 
