@@ -72,6 +72,61 @@
         创建并切换分支：
         git checkout -b [branch_name]
         *创建新的分支并切换
+    3.合并分支
+        git merge [branch_name]
+        *　在master主分支执行该命令，即将其他分支内容合并到master
+        *  当合并分支产生冲突时，需要手动更改提交
+    
+    4.删除分支
+        git branch -d [branch_name]
+        * 如果分支没有被合并　需要用 -D 强制删除
+
+    帮助文档
+        git helf [命令名称]
+    
+远程仓库
+    即远程主机上的git仓库。实际git为分布式结构，每台主机git仓库都相似，
+    只是把其他主机中的git仓库称为远程仓库
+    1.创建共享远程仓库
+        [1] 创建仓库目录，设置目录属主
+            mkdir gitrepo
+            chown tarena:tarena gitrepo
+        [2] 将仓库目录使用　--bare 初始化，给仓库起名称
+            cd gitrepo
+            git init --bare spyder.git
+        [3] 设置spyder.git目录属主与项目目录相同
+            chown -R tarena:tarena spyder.git
+    2.远程仓库连接协议
+        * 本地协议　　
+            直接通过路径连接一个项目仓库
+            e.g. /opt/git/project
+                file:///opt/git/project.git
+        * SSH 协议
+            通过ssh协议方式连接远程
+            e.g. ssh://user@server/project.git(项目路径)
+                user@server:/project.git (项目路径)
+        * git 协议
+        * HTTP/HTTPS协议  
+            e.g. http://example.com/project.git
+        
+        sudo apt-get install ssh   安装ssh
+    3.添加远程主机仓库
+        git remote add origin tarena@127.0.0.1:/home/tarena/gitrepo/spyder.git
+        * 该命令必须在某个git项目目录下运行
+
+        删除远程主机：git remote rm [远程主机名]
+
+    4.push将本地分支推送到远程
+        将本地的master分支推送到远程
+        git push -u origin master
+        
+        * -u表示本地master和远程master建立追踪关系
+        这样后面本地分支修改后再向远程推送则可以省略分支名
+
+        向远程推送标签
+        git push origin v1.0  某一个标签
+        git push origin --tags  所有标签
+
 
 
 
